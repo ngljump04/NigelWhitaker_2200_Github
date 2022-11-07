@@ -1,30 +1,25 @@
-/**************************************************************
+/********************************************************************
  * 
  * @author Nigel Whitaker
- * Date: 11/04/2022
+ * Date: 11/07/2022 [M]
  *
- *************************************************************/
+ */
 public class Exercise06_13 {
-
 	public static void main(String[] args) {
-
-		double seriesStart  =  1.0;	
-		double numberOfRows = 20.0;	
-
-		System.out.println("\ni         m(i)     ");
-		System.out.println("-------------------");
-
-		for (double i = seriesStart; i <= numberOfRows; i++) {
-			System.out.printf("%-10.0f", i);
-			System.out.printf("%7.4f\n", sumSeries(i));
+		System.out.printf("%4s%20s\n","i","m(i)");
+		for(int i = 1; i <=20; i++) {
+			System.out.printf("%4d%20.4f\n",i,m(i));
 		}
+
 	}
-
-	public static double sumSeries(double n) {
-		double sum = 0;	
-		for (double i = 1; i <= n; i++) {
-			sum += i / (i + 1);
+	
+	private static double m(int i) {
+		double sum = 0;
+		for( int k = 1; k <= i; k++) {
+			sum += k / (k+1.0);
 		}
+		
 		return sum;
 	}
+
 }
